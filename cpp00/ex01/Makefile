@@ -4,8 +4,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = 	main.cpp \
 		utils.cpp \
-		phonebook.cpp \
-		contact.cpp \
+		Phonebook.cpp \
+		Contact.cpp \
 
 OBJ_DIR = obj
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)

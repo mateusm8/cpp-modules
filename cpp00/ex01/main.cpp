@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 22:08:54 by matmagal          #+#    #+#             */
-/*   Updated: 2026/10/25 18:24:11 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/01 18:12:29 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,11 @@ int main(void){
 			std::string index;
 			if (!std::getline(std::cin, index))
 				break ;
+			std::size_t	lenght = index.size();
+			if (lenght > 2){
+				std::cout << "Invalid argument" << std::endl;
+				continue ;
+			}
 			if (is_number(index))
 				phonebook.displayContact(std::atoi(index.c_str()));
 			else
