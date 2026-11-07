@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 10:06:25 by matmagal          #+#    #+#             */
-/*   Updated: 2026/06/24 10:43:18 by matmagal         ###   ########.fr       */
+/*   Created: 2026/11/07 15:16:12 by matmagal          #+#    #+#             */
+/*   Updated: 2026/11/07 15:56:01 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-Zombie* zombieHorde(int N, std::string name){
-	Zombie* horde = new Zombie[N];
-	for (int i = 0; i < N; i++){
-		horde[i].setName(name);
-	}
-	return horde;
-}
+#include <string>
+
+class Animal {
+	protected:
+		std::string type;
+	public:
+		Animal();
+		Animal(const Animal& copy);
+		Animal& operator=(const Animal& copy);
+		virtual ~Animal();
+		
+		const std::string&	getType() const;
+		virtual void	makeSound() const;
+};
+
+#endif

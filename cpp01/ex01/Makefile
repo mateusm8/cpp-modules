@@ -3,8 +3,8 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = 	main.cpp \
-		zombie.cpp \
-		zombieHorde.cpp \
+		Zombie.cpp \
+		ZombieHorde.cpp \
 
 OBJ_DIR = obj
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)

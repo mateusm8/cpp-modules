@@ -6,11 +6,11 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 19:34:15 by matmagal          #+#    #+#             */
-/*   Updated: 2026/06/24 19:38:26 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/07 18:27:06 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "weapon.hpp"
+#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
