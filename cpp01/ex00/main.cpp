@@ -6,17 +6,17 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 09:32:26 by matmagal          #+#    #+#             */
-/*   Updated: 2026/10/25 18:50:08 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/12 19:58:40 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int main(void){
-	Zombie* heap = newZombie("Heap");
-	heap->announce();
-	delete heap;
+	Zombie* lazyzombie = newZombie("LazyZombie");
+	lazyzombie->announce();
+	delete lazyzombie;
 
-	randomChump("Stack");
+	randomChump("RandomZ");
 	return 0;
 }
