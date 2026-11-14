@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 20:00:18 by matmagal          #+#    #+#             */
-/*   Updated: 2026/09/27 20:27:35 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/13 21:30:22 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,5 @@ int Fixed::getRawBits(void) const{
 void Fixed::setRawBits(int const raw){
 	_rawBits = raw;
 }
+
+

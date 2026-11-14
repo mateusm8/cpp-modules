@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 20:00:18 by matmagal          #+#    #+#             */
-/*   Updated: 2026/10/01 22:49:26 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/14 19:06:41 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ void Fixed::setRawBits(int const raw){
 }
 
 float Fixed::toFloat(void) const {
-	return _rawBits / 256.0f;
+	return _rawBits / static_cast<float>(1 << this->_fractionalBits);
 }
 
 int	Fixed::toInt(void) const {
-	return _rawBits / 256;
+	return _rawBits / (1 << this->_fractionalBits);
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& value) {
@@ -53,11 +53,11 @@ std::ostream& operator<<(std::ostream& out, const Fixed& value) {
 	return out;
 }
 
-Fixed::Fixed(int value) : _rawBits(value * 256){
+Fixed::Fixed(int value) : _rawBits(value * (1 << this->_fractionalBits)){
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(float value) : _rawBits(roundf(value * 256)) {
+Fixed::Fixed(float value) : _rawBits(roundf(value * (1 << this->_fractionalBits))) {
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -102,14 +102,14 @@ Fixed Fixed::operator-(const Fixed& value) const {
 Fixed Fixed::operator*(const Fixed& value) const {
 	Fixed result;
 
-	result.setRawBits((_rawBits * value._rawBits) / 256);
+	result.setRawBits((_rawBits * value._rawBits) / (1 << this->_fractionalBits));
 	return result;
 }
 
 Fixed Fixed::operator/(const Fixed& value) const {
 	Fixed result;
 
-	result.setRawBits((_rawBits * 256) / value._rawBits);
+	result.setRawBits((_rawBits * (1 << this->_fractionalBits)) / value._rawBits);
 	return result;
 }
 
