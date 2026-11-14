@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 20:00:18 by matmagal          #+#    #+#             */
-/*   Updated: 2026/11/14 19:06:41 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/14 19:28:05 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,16 +100,20 @@ Fixed Fixed::operator-(const Fixed& value) const {
 }
 
 Fixed Fixed::operator*(const Fixed& value) const {
-	Fixed result;
+	Fixed	result;
+	long	temp;
 
-	result.setRawBits((_rawBits * value._rawBits) / (1 << this->_fractionalBits));
+	temp = (static_cast<long>(_rawBits) * value._rawBits) / (1 << this->_fractionalBits);
+	result.setRawBits(temp);
 	return result;
 }
 
 Fixed Fixed::operator/(const Fixed& value) const {
-	Fixed result;
+	Fixed	result;
+	long	temp;
 
-	result.setRawBits((_rawBits * (1 << this->_fractionalBits)) / value._rawBits);
+	temp = (static_cast<long>(_rawBits) * (1 << this->_fractionalBits)) / value._rawBits;
+	result.setRawBits(temp);
 	return result;
 }
 
