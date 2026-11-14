@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 17:30:04 by matmagal          #+#    #+#             */
-/*   Updated: 2026/11/09 18:58:11 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/14 20:31:38 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ Brain::Brain(){
 	std::cout << "Brain Default constructor called" << std::endl;
 }
 
-Brain::Brain(const Brain& copy)
-	: ideas(copy.ideas){
-		std::cout << "Brain copy constructor called" << std::endl;
+Brain::Brain(const Brain& copy){
+	for (size_t i = 0; i < 100; i++)
+		ideas[i] = copy.ideas[i];
+	std::cout << "Brain copy constructor called" << std::endl;
 }
 
 Brain& Brain::operator=(const Brain& copy){

@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 16:17:01 by matmagal          #+#    #+#             */
-/*   Updated: 2026/11/09 20:19:45 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/14 20:48:50 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ Cat& Cat::operator=(const Cat& copy) {
 }
 
 Cat::~Cat(){
-	std::cout << "Cat Destructor called" << std::endl;
 	delete brain;
+	std::cout << "Cat Destructor called" << std::endl;
 }
 
 void Cat::makeSound() const {

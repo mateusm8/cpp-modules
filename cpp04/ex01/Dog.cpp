@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 15:56:32 by matmagal          #+#    #+#             */
-/*   Updated: 2026/11/09 20:40:59 by matmagal         ###   ########.fr       */
+/*   Updated: 2026/11/14 20:49:04 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ Dog& Dog::operator=(const Dog& copy) {
 }
 
 Dog::~Dog(){
-	std::cout << "Dog Destructor called" << std::endl;
 	delete brain;
+	std::cout << "Dog Destructor called" << std::endl;
 }
 
 void Dog::makeSound() const {
